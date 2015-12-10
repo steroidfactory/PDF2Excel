@@ -13,5 +13,6 @@ namespace PDF2Excel
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
