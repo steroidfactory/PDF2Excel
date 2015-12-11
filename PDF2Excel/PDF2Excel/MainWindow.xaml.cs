@@ -147,7 +147,6 @@ namespace PDF2Excel
                                             // Do not interpret.
                                             if (c == '\\' && !nextLiteral)
                                             {
-
                                                 nextLiteral = false;
                                             }
                                             else
@@ -156,10 +155,6 @@ namespace PDF2Excel
                                                 if (((c >= ' ') && (c <= '~')) ||
                                                     ((c >= 128) && (c < 255)))
                                                 {
-                                                    if (resultString.Contains("040"))
-                                                    {
-                                                        resultString.Replace("040", " ");
-                                                    }
                                                     resultString += c.ToString();
                                                 }
                                                 nextLiteral = false;
@@ -272,9 +267,10 @@ namespace PDF2Excel
                             lineCount++;
                         }                     
                     }
+
                     for (int i = 0; i < fullText.Count - 1; i++)
                     {
-                        Console.WriteLine(fullText[i].Replace("040", " ".Replace("050", "(".Replace("051", ")"))));
+                        Console.WriteLine(fullText[i].Replace("040", " ").Replace("050", "(").Replace("051", ")"));
                     }
 
                 }
